@@ -5,6 +5,7 @@ import {FundMe} from "../src/FundMe.sol";
 import {Test} from "forge-std/Test.sol";
 import {console} from "forge-std/console.sol";
 import {DeployFundMe} from "../script/DeployFundMe.s.sol";
+//testing the FundMe contract
 
 contract FundMeTest is Test {
     FundMe fundMe;
@@ -14,17 +15,17 @@ contract FundMeTest is Test {
         fundMe = deployFundMe.run();
     }
 
-    function testMinimumDollarIsFive() public {
+    function testMinimumDollarIsFive() public view {
         assertEq(fundMe.MINIMUM_USD(), 5e18);
     }
 
-    function testOwnerIsMsgSender() public {
+    function testOwnerIsMsgSender() public view {
         console.log(msg.sender);
         console.log(fundMe.i_owner());
         assertEq(fundMe.i_owner(), msg.sender);
     }
 
-    function testPriceFeedVersion() public {
+    function testPriceFeedVersion() public view {
         console.log(fundMe.getVersion());
     }
 }
