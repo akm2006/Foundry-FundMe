@@ -1,4 +1,3 @@
-```markdown
 # Foundry Fund Me 🚀
 
 This repository contains a decentralized crowdfunding (FundMe) smart contract built with the **Foundry** development framework. The contract is written in **Solidity** and allows an owner to collect funds in ETH from anyone and withdraw them.
